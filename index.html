@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BlurShield — Política de Privacidad</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg: #f7f6f2;
+  --bg2: #ffffff;
+  --accent: #1a2e1f;
+  --accent2: #2d5a3d;
+  --green: #63dcaa;
+  --text: #1a1e28;
+  --text2: #5a6070;
+  --text3: #9aa0b0;
+  --border: rgba(0,0,0,0.08);
+  --radius: 14px;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 15px;
+  line-height: 1.75;
+  min-height: 100vh;
+}
+
+/* ── Nav ── */
+nav {
+  position: sticky; top: 0; z-index: 100;
+  background: rgba(247,246,242,0.92);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+  padding: 14px 40px;
+  display: flex; align-items: center; justify-content: space-between;
+}
+
+.nav-logo {
+  display: flex; align-items: center; gap: 10px;
+  font-family: 'Syne', sans-serif; font-size: 18px; font-weight: 800;
+  color: var(--accent); text-decoration: none;
+}
+
+.nav-logo-icon {
+  width: 32px; height: 32px;
+  background: linear-gradient(135deg, #63dcaa, #2d5a3d);
+  border-radius: 9px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 16px;
+}
+
+.nav-logo span { color: #2d5a3d; }
+.nav-date { font-size: 12px; color: var(--text3); }
+
+/* ── Hero ── */
+.hero {
+  background: var(--accent);
+  color: white;
+  padding: 60px 40px 50px;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -60px; right: -60px;
+  width: 300px; height: 300px;
+  background: radial-gradient(circle, rgba(99,220,170,0.2) 0%, transparent 70%);
+}
+
+.hero::after {
+  content: '🛡️';
+  position: absolute;
+  right: 60px; top: 50%;
+  transform: translateY(-50%);
+  font-size: 80px;
+  opacity: 0.15;
+}
+
+.hero-inner { max-width: 700px; }
+.hero-tag {
+  display: inline-block;
+  background: rgba(99,220,170,0.2);
+  border: 1px solid rgba(99,220,170,0.4);
+  color: #63dcaa;
+  font-size: 11px; font-weight: 600;
+  letter-spacing: 1.5px; text-transform: uppercase;
+  padding: 4px 12px; border-radius: 20px;
+  margin-bottom: 16px;
+  font-family: 'Syne', sans-serif;
+}
+
+.hero h1 {
+  font-family: 'Syne', sans-serif;
+  font-size: clamp(28px, 4vw, 42px);
+  font-weight: 800;
+  line-height: 1.15;
+  margin-bottom: 14px;
+  letter-spacing: -0.5px;
+}
+
+.hero h1 span { color: #63dcaa; }
+
+.hero p {
+  font-size: 15px;
+  color: rgba(255,255,255,0.7);
+  max-width: 520px;
+  line-height: 1.7;
+}
+
+.hero-meta {
+  margin-top: 24px;
+  display: flex; gap: 24px; flex-wrap: wrap;
+}
+
+.hero-meta-item {
+  font-size: 12px;
+  color: rgba(255,255,255,0.5);
+  display: flex; align-items: center; gap: 5px;
+}
+
+.hero-meta-item strong { color: rgba(255,255,255,0.8); }
+
+/* ── Summary cards ── */
+.summary {
+  max-width: 860px; margin: 0 auto;
+  padding: 40px 40px 0;
+}
+
+.summary-title {
+  font-family: 'Syne', sans-serif;
+  font-size: 13px; font-weight: 700;
+  letter-spacing: 1px; text-transform: uppercase;
+  color: var(--text3); margin-bottom: 16px;
+}
+
+.summary-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-bottom: 48px;
+}
+
+.summary-card {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 16px 18px;
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+
+.summary-card:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.07); }
+
+.sc-icon { font-size: 22px; margin-bottom: 8px; }
+.sc-title { font-family: 'Syne', sans-serif; font-size: 13px; font-weight: 700; color: var(--accent); margin-bottom: 4px; }
+.sc-desc { font-size: 12px; color: var(--text2); line-height: 1.5; }
+
+.sc-good { border-top: 3px solid #63dcaa; }
+.sc-warn { border-top: 3px solid #ffd166; }
+.sc-info { border-top: 3px solid #63b4dc; }
+
+/* ── Content ── */
+.content {
+  max-width: 860px; margin: 0 auto;
+  padding: 0 40px 80px;
+}
+
+.section {
+  margin-bottom: 40px;
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 28px 32px;
+  animation: fadeUp 0.4s ease both;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.section:nth-child(2) { animation-delay: 0.05s; }
+.section:nth-child(3) { animation-delay: 0.1s; }
+.section:nth-child(4) { animation-delay: 0.15s; }
+.section:nth-child(5) { animation-delay: 0.2s; }
+.section:nth-child(6) { animation-delay: 0.25s; }
+
+.section-num {
+  font-family: 'Syne', sans-serif;
+  font-size: 11px; font-weight: 700;
+  letter-spacing: 2px; text-transform: uppercase;
+  color: var(--text3); margin-bottom: 6px;
+}
+
+.section h2 {
+  font-family: 'Syne', sans-serif;
+  font-size: 18px; font-weight: 700;
+  color: var(--accent); margin-bottom: 14px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border);
+}
+
+.section p { color: var(--text2); margin-bottom: 12px; }
+.section p:last-child { margin-bottom: 0; }
+
+.section ul {
+  list-style: none; padding: 0;
+  display: flex; flex-direction: column; gap: 8px;
+  margin: 12px 0;
+}
+
+.section ul li {
+  display: flex; align-items: flex-start; gap: 10px;
+  font-size: 14px; color: var(--text2);
+}
+
+.section ul li::before {
+  content: '→';
+  color: #63dcaa;
+  font-weight: 700;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.highlight {
+  background: rgba(99,220,170,0.08);
+  border: 1px solid rgba(99,220,170,0.25);
+  border-left: 3px solid #63dcaa;
+  border-radius: 8px;
+  padding: 14px 16px;
+  margin: 14px 0;
+  font-size: 14px;
+  color: var(--text);
+}
+
+.highlight strong { color: var(--accent2); }
+
+.warn-box {
+  background: rgba(255,209,102,0.08);
+  border: 1px solid rgba(255,209,102,0.3);
+  border-left: 3px solid #ffd166;
+  border-radius: 8px;
+  padding: 14px 16px;
+  margin: 14px 0;
+  font-size: 14px;
+  color: var(--text2);
+}
+
+/* ── Footer ── */
+footer {
+  background: var(--accent);
+  color: rgba(255,255,255,0.6);
+  text-align: center;
+  padding: 32px 40px;
+  font-size: 13px;
+}
+
+footer a { color: #63dcaa; text-decoration: none; }
+footer strong { color: white; }
+
+@media (max-width: 640px) {
+  nav { padding: 12px 20px; }
+  .hero { padding: 40px 20px; }
+  .hero::after { display: none; }
+  .summary { padding: 24px 20px 0; }
+  .summary-grid { grid-template-columns: 1fr; }
+  .content { padding: 0 20px 60px; }
+  .section { padding: 20px; }
+}
+</style>
+</head>
+<body>
+
+<!-- Nav -->
+<nav>
+  <a href="#" class="nav-logo">
+    <div class="nav-logo-icon">🛡️</div>
+    Blur<span>Shield</span>
+  </a>
+  <span class="nav-date">Última actualización: marzo 2026</span>
+</nav>
+
+<!-- Hero -->
+<div class="hero">
+  <div class="hero-inner">
+    <div class="hero-tag">Política de Privacidad</div>
+    <h1>Tu privacidad es nuestra <span>prioridad</span></h1>
+    <p>BlurShield fue diseñado desde cero para proteger datos sensibles — por eso nunca recopilamos, almacenamos ni transmitimos tu información personal.</p>
+    <div class="hero-meta">
+      <div class="hero-meta-item">📅 <strong>Vigente desde:</strong> marzo 2026</div>
+      <div class="hero-meta-item">🌍 <strong>Aplicable en:</strong> todos los países</div>
+      <div class="hero-meta-item">📧 <strong>Contacto:</strong> soporte@blurshield.app</div>
+    </div>
+  </div>
+</div>
+
+<!-- Summary cards -->
+<div class="summary">
+  <div class="summary-title">Resumen rápido</div>
+  <div class="summary-grid">
+    <div class="summary-card sc-good">
+      <div class="sc-icon">🔒</div>
+      <div class="sc-title">Sin recopilación de datos</div>
+      <div class="sc-desc">No guardamos ningún dato personal tuyo ni del contenido de las páginas que visitas.</div>
+    </div>
+    <div class="summary-card sc-good">
+      <div class="sc-icon">💻</div>
+      <div class="sc-title">Todo en tu navegador</div>
+      <div class="sc-desc">Toda la funcionalidad ocurre localmente en tu Chrome. Nada se envía a servidores externos.</div>
+    </div>
+    <div class="summary-card sc-warn">
+      <div class="sc-icon">🔑</div>
+      <div class="sc-title">Verificación de licencia</div>
+      <div class="sc-desc">Solo enviamos tu clave de licencia a Payhip para verificarla. No se guarda nada más.</div>
+    </div>
+  </div>
+</div>
+
+<!-- Content -->
+<div class="content">
+
+  <div class="section">
+    <div class="section-num">01</div>
+    <h2>¿Qué es BlurShield?</h2>
+    <p>BlurShield es una extensión de Google Chrome que permite a los usuarios ocultar información sensible en páginas web reemplazando el contenido en el DOM del navegador. Está diseñada para proteger datos como correos electrónicos, números de teléfono, claves API y otra información confidencial durante grabaciones de pantalla, videollamadas y transmisiones en vivo.</p>
+    <p>Esta política describe cómo BlurShield maneja la información del usuario.</p>
+  </div>
+
+  <div class="section">
+    <div class="section-num">02</div>
+    <h2>Datos que NO recopilamos</h2>
+    <p>BlurShield <strong>no recopila, almacena ni transmite</strong> ninguno de los siguientes datos:</p>
+    <ul>
+      <li>Contenido de las páginas web que visitas</li>
+      <li>Datos personales como nombre, dirección o información de contacto</li>
+      <li>Historial de navegación</li>
+      <li>Contraseñas o datos de formularios</li>
+      <li>Información financiera o bancaria</li>
+      <li>Comunicaciones personales</li>
+      <li>Datos de salud o información sensible</li>
+    </ul>
+    <div class="highlight">
+      <strong>Todo el procesamiento ocurre localmente</strong> en tu navegador. BlurShield no tiene servidores propios que almacenen información de usuarios.
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-num">03</div>
+    <h2>Datos que SÍ utilizamos</h2>
+    <p>BlurShield utiliza un mínimo de datos estrictamente necesarios para funcionar:</p>
+    <ul>
+      <li><strong>Estado de la suscripción</strong> — guardado localmente en chrome.storage.sync para recordar si tienes Premium activo</li>
+      <li><strong>Contador de usos diarios</strong> — guardado localmente para controlar el límite del plan gratuito (5 por día)</li>
+      <li><strong>Posiciones de las máscaras</strong> — guardadas en sessionStorage del navegador, solo durante la sesión activa</li>
+    </ul>
+    <div class="highlight">
+      <strong>Estos datos nunca salen de tu dispositivo.</strong> Se almacenan exclusivamente en tu navegador Chrome y no se transmiten a ningún servidor.
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-num">04</div>
+    <h2>Verificación de licencia Premium</h2>
+    <p>Cuando activas una licencia Premium, BlurShield realiza una consulta a la API de <strong>Payhip</strong> para verificar que tu clave sea válida.</p>
+    <ul>
+      <li>Solo se envía la clave de licencia que ingresaste</li>
+      <li>No se envía ningún dato personal adicional</li>
+      <li>La verificación ocurre una sola vez al activar</li>
+      <li>El resultado se guarda localmente en tu navegador</li>
+    </ul>
+    <div class="warn-box">
+      Payhip tiene su propia política de privacidad disponible en <strong>payhip.com/privacy</strong>. Al comprar una licencia, también aceptas los términos de Payhip.
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-num">05</div>
+    <h2>Permisos de la extensión</h2>
+    <p>BlurShield solicita los siguientes permisos de Chrome, estrictamente necesarios para su funcionamiento:</p>
+    <ul>
+      <li><strong>activeTab</strong> — para acceder a la pestaña activa donde el usuario quiere ocultar información</li>
+      <li><strong>storage</strong> — para guardar localmente el estado de la licencia y el contador de usos</li>
+      <li><strong>scripting</strong> — para ejecutar el código que reemplaza el contenido en el DOM de la página</li>
+      <li><strong>host_permissions (&lt;all_urls&gt;)</strong> — necesario para que la extensión funcione en cualquier página web que el usuario elija</li>
+    </ul>
+    <div class="highlight">
+      <strong>No usamos estos permisos para recopilar datos.</strong> Solo se utilizan para aplicar las máscaras de contenido que el usuario solicita explícitamente.
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-num">06</div>
+    <h2>Terceros y servicios externos</h2>
+    <p>BlurShield interactúa con los siguientes servicios externos:</p>
+    <ul>
+      <li><strong>Payhip</strong> — exclusivamente para verificar claves de licencia Premium. Ver: payhip.com/privacy</li>
+      <li><strong>Google Chrome Web Store</strong> — para distribución de la extensión. Ver: policies.google.com/privacy</li>
+    </ul>
+    <p>No compartimos datos con anunciantes, redes de rastreo ni ningún otro tercero.</p>
+  </div>
+
+  <div class="section">
+    <div class="section-num">07</div>
+    <h2>Seguridad</h2>
+    <p>Dado que BlurShield no recopila ni almacena datos en servidores externos, el riesgo de vulneración de datos personales es mínimo. Todo el estado de la aplicación se guarda localmente en tu navegador Chrome, bajo las mismas protecciones de seguridad que Google aplica a las extensiones.</p>
+  </div>
+
+  <div class="section">
+    <div class="section-num">08</div>
+    <h2>Menores de edad</h2>
+    <p>BlurShield no está dirigido a menores de 13 años. No recopilamos intencionalmente información de menores. Si eres padre o tutor y crees que un menor ha proporcionado información personal, contáctanos para eliminarla.</p>
+  </div>
+
+  <div class="section">
+    <div class="section-num">09</div>
+    <h2>Cambios a esta política</h2>
+    <p>Podemos actualizar esta política de privacidad ocasionalmente. Cuando lo hagamos, actualizaremos la fecha al inicio de esta página. Te recomendamos revisarla periódicamente.</p>
+    <p>El uso continuado de BlurShield después de cualquier cambio constituye tu aceptación de la nueva política.</p>
+  </div>
+
+  <div class="section">
+    <div class="section-num">10</div>
+    <h2>Contacto</h2>
+    <p>Si tienes preguntas sobre esta política de privacidad o sobre cómo BlurShield maneja tus datos, puedes contactarnos en:</p>
+    <div class="highlight">
+      📧 <strong>soporte@blurshield.app</strong><br>
+      🌐 <strong>payhip.com/b/gPoDm</strong>
+    </div>
+    <p>Responderemos en un plazo máximo de 5 días hábiles.</p>
+  </div>
+
+</div>
+
+<!-- Footer -->
+<footer>
+  <p><strong>BlurShield</strong> — Extensión de Chrome para proteger datos sensibles en pantalla</p>
+  <p style="margin-top:8px">© 2026 BlurShield · <a href="#">Política de Privacidad</a> · <a href="https://payhip.com/b/gPoDm">Obtener Premium</a></p>
+</footer>
+
+</body>
+</html>
